@@ -8,6 +8,14 @@
     "strings": false
   },
   "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
     "source.organizeImports": "explicit"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "typescript": true
   }
 }

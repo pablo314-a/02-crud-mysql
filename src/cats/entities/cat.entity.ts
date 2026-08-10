@@ -1,5 +1,5 @@
-import { Delete } from "@nestjs/common";
-import { Column, DeleteDateColumn, Entity } from "typeorm";
+import { Breed } from "src/breeds/entities/breed.entity";
+import { Column, DeleteDateColumn, Entity, ManyToOne } from "typeorm";
 
 @Entity()
 export class Cat {
@@ -14,10 +14,13 @@ export class Cat {
     @Column()
     age: number;
 
-    @Column()
-    breed: string;
-
     @DeleteDateColumn()
     deletedAt: Date;
+
+    //Relacion con la bd
+    @ManyToOne(()=> Breed, (breed)=> breed.id,{
+        eager:true,//trae la raza al hacer un find one
+    })
+    breed: Breed;
 }
     
